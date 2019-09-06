@@ -17,5 +17,5 @@ lambda(function ($event) {
     ];
     $result     = $dbClient->putItem($params_put);
 
-    return ["result" => $result["statusCode"] == 200 ? 'Sucess' : 'Fail', 'http_code' => $result['statusCode']];
+    return ["result" => $result["statusCode"] == 200 ? 'Success' : 'Fail', 'http_code' => $result['statusCode']];
 });
