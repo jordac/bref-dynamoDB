@@ -6,7 +6,7 @@ php lambda that makes a putItem request to DynamoDB
 
 ## Files:
 #### serverless.yml 
-    > contains config information required to run serverless --deploy
+    > contains config information required to deploy; https://serverless.com/framework/docs/providers/aws/guide/deploying/
 #### index.php      
     > contains logic that lambda runs
 #### config.php     
