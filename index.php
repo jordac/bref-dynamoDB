@@ -10,12 +10,14 @@ require __DIR__.'/vendor/autoload.php';
  */
 lambda(function ($event) {
     $config   = include 'config.php';
+    $id = rand(1, 10000000);
+    $message = $event['message'];
     $dbClient = DynamoDbClient::Factory($config);
     $params_put = [
         'TableName' => 'messages',
-        'Item'      => ['id' => ['N' => rand(1, 10000000)], 'message' => ["S" => $event['message']]],
+        'Item'      => ['id' => ['N' => "$id"], 'message' => ['S' => "$message"]],
     ];
     $result     = $dbClient->putItem($params_put);
 
-    return ["result" => $result["statusCode"] == 200 ? 'Sucess' : 'Fail', 'http_code' => $result['statusCode']];
+    return ["result" => $result["@metadata"]["statusCode"] == 200 ? 'Success' : 'Fail', 'http_code' => $result["@metadata"]['statusCode']];
 });
