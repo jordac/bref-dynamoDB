@@ -14,13 +14,3 @@ functions:
         description: ''
         layers:
             - ${bref:layer.php-73}
-#	vps:
-#	    securityGroupIds:
-#	        - sg-024492f3647615632
-#            subnetIds:
-#                - subnet-0f402769374b8162c
-#		- subnet-04f240e3a55a05a15
-#		- subnet-03290086067f98334
-#		- subnet-0f716f3335e2ea911
-#		- subnet-0930f2007683a4dc8
-#		- subnet-00bd27b62cdef7762
